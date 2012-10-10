@@ -1,0 +1,19 @@
+name = Vacature sites
+description = Installation profile for vacature sites
+core = 3.x
+dependencies[] = views
+dependencies[] = ctools
+dependencies[] = admin_menu
+dependencies[] = module_filter
+dependencies[] = token
+dependencies[] = pathauto
+dependencies[] = link
+dependencies[] = backup_migrate
+dependencies[] = wysiwyg
+dependencies[] = devel
+
+dependencies[] = features
+dependencies[] = search_api
+dependencies[] = search_api_solr
+dependencies[] = admin_devel
+dependencies[] = ds
