@@ -1,19 +1,60 @@
 name = Vacature sites
 description = Installation profile for vacature sites
-core = 3.x
-dependencies[] = views
-dependencies[] = ctools
-dependencies[] = admin_menu
-dependencies[] = module_filter
-dependencies[] = token
-dependencies[] = pathauto
-dependencies[] = link
-dependencies[] = backup_migrate
-dependencies[] = wysiwyg
-dependencies[] = devel
+core = 7.x
 
-dependencies[] = features
-dependencies[] = search_api
-dependencies[] = search_api_solr
+;this is used to enable the modules
+
+; d7.make modules
 dependencies[] = admin_devel
+dependencies[] = admin_menu
+dependencies[] = ctools
+dependencies[] = block
+dependencies[] = color
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = dblog
+dependencies[] = field
+dependencies[] = field_sql_storage
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = locale
+dependencies[] = menu
+dependencies[] = node
+dependencies[] = number
+dependencies[] = options
+dependencies[] = overlay
+dependencies[] = path
+dependencies[] = rdf
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = system
+dependencies[] = taxonomy
+dependencies[] = text
+dependencies[] = trigger
+dependencies[] = update
+dependencies[] = user
+dependencies[] = devel
+dependencies[] = link
+dependencies[] = mail_logger
+dependencies[] = l10n_client
+dependencies[] = l10n_update
+dependencies[] = backup_migrate
+dependencies[] = entity
+dependencies[] = module_filter
+dependencies[] = pathauto
+dependencies[] = profile2
+dependencies[] = token
+dependencies[] = taxonomy_csv
+dependencies[] = wysiwyg
+dependencies[] = views
+dependencies[] = views_ui
+
+; vacaturesite modules
+dependencies[] = features
+; dependencies[] = search_api
+; dependencies[] = search_api_solr
 dependencies[] = ds
