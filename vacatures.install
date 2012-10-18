@@ -13,7 +13,8 @@
  */
 function minimal_install() {
   // Enable some standard blocks.
-  $default_theme = variable_get('theme_default', 'at_biz');
+  //$default_theme = variable_get('theme_default', 'at_biz');
+  $default_theme =  'at_biz';
   $values = array(
     array(
       'module' => 'system',
