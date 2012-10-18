@@ -69,4 +69,3 @@ dependencies[] = job_agent
 dependencies[] = click_stats
 dependencies[] = bannert
 dependencies[] = pubdate
-dependencies[] = at_biz
