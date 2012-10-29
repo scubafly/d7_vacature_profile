@@ -12,12 +12,12 @@
  * @see system_install()
  */
 function vacatures_install() {
-  theme_enable(array('at_biz', 'seven'));
-  variable_set('theme_default', 'at_biz');
-  variable_set('admin_theme', 'seven');
+  // theme_enable(array('at_biz', 'seven'));
+  // variable_set('theme_default', 'at_biz');
+  // variable_set('admin_theme', 'seven');
   // Enable some standard blocks.
-  $default_theme = variable_get('theme_default', 'at_biz');
-  //$default_theme =  'at_biz';
+  // $default_theme = variable_get('theme_default', 'at_biz');
+  $default_theme =  'at_biz';
   $values = array(
     array(
       'module' => 'system',
