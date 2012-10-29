@@ -11,7 +11,7 @@
  *
  * @see system_install()
  */
-function minimal_install() {
+function vacatures_install() {
   // Enable some standard blocks.
   //$default_theme = variable_get('theme_default', 'at_biz');
   $default_theme =  'at_biz';
