@@ -83,11 +83,19 @@ function vacatures_install() {
   user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content'));
 
+  // set at_biz theme as enabled
   db_update('system')
     ->fields(array('status' => 1))
     ->condition('type', 'theme')
     ->condition('name', 'at_biz')
     ->execute();
+  // disable bartik theme
+  db_update('system')
+    ->fields(array('status' => 0)
+    ->condition('type', 'theme')
+    ->condition('name', 'bartik')
+    ->execute();
+
   variable_set('theme_default', 'at_biz');
 
 }

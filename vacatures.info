@@ -69,3 +69,5 @@ dependencies[] = job_agent
 dependencies[] = click_stats
 dependencies[] = bannert
 dependencies[] = pubdate
+
+files[] = vacancies.profile
