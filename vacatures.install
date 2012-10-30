@@ -69,6 +69,16 @@ function vacatures_install() {
       'pages' => '',
       'cache' => -1,
     ),
+    // putting the main-menu in the menu_bar block
+    array(
+      'module' => 'menu',
+      'delta' => $menu['main-menu'],
+      'theme' => $default_theme,
+      'status' => 1,
+      'region' => 'menu_bar',
+      'pages' => '',
+      'cache' => -1,
+    ),
   );
   $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
   foreach ($values as $record) {
@@ -82,6 +92,37 @@ function vacatures_install() {
   // Enable default permissions for system roles.
   user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content'));
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content'));
+
+  // create menu
+  $item = array(
+    'link_title' => st('Home'),
+    'link_path' => '<front>',
+    'menu_name' => 'main-menu',
+  );
+  menu_link_save($item);
+
+  $item = array(
+    'link_title' => st('Uitloggen'),
+    'link_path' => 'user/logout',
+    'menu_name' => 'main-menu',
+  );
+  menu_link_save($item);
+
+  $item = array(
+    'link_title' => st('Contact'),
+    'link_path' => 'contact',
+    'menu_name' => 'main-menu',
+  );
+  menu_link_save($item);
+
+  $item = array(
+    'link_title' => st('Account'),
+    'link_path' => 'user',
+    'menu_name' => 'main-menu',
+  );
+  menu_link_save($item);
+  // Update the menu router information.
+  menu_rebuild();
 
   // set at_biz theme as enabled
   db_update('system')
@@ -97,5 +138,4 @@ function vacatures_install() {
     ->execute();
 
   variable_set('theme_default', 'at_biz');
-
 }
