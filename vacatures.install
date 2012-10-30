@@ -132,7 +132,7 @@ function vacatures_install() {
     ->execute();
   // disable bartik theme
   db_update('system')
-    ->fields(array('status' => 0)
+    ->fields(array('status' => 0))
     ->condition('type', 'theme')
     ->condition('name', 'bartik')
     ->execute();
