@@ -18,6 +18,7 @@ function vacatures_install() {
   // Enable some standard blocks.
   // $default_theme = variable_get('theme_default', 'at_biz');
   $default_theme =  'at_biz';
+  $admin_theme = 'seven';
   $values = array(
     array(
       'module' => 'system',
@@ -69,12 +70,23 @@ function vacatures_install() {
       'pages' => '',
       'cache' => -1,
     ),
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $admin_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+    ),
     // putting the main-menu in the menu_bar block
     array(
       'module' => 'menu',
-      'delta' => $menu['main-menu'],
+      'delta' => 'main-menu',
       'theme' => $default_theme,
       'status' => 1,
+      'weight' => 0,
       'region' => 'menu_bar',
       'pages' => '',
       'cache' => -1,
@@ -122,7 +134,7 @@ function vacatures_install() {
   );
   menu_link_save($item);
   // Update the menu router information.
-  menu_rebuild();
+  // menu_rebuild();
 
   // set at_biz theme as enabled
   db_update('system')
@@ -137,5 +149,13 @@ function vacatures_install() {
     ->condition('name', 'bartik')
     ->execute();
 
+  // Enable the admin theme.
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', 'seven')
+    ->execute();
   variable_set('theme_default', 'at_biz');
+  variable_set('admin_theme', 'seven');
+  variable_set('node_admin_theme', '1');
 }
